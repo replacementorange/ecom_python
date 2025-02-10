@@ -2,5 +2,66 @@
 {% load static %}
 
 {% block content %}
-    <h3>Checkout</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="box-element" id="form-wrapper">
+                <form id="form">
+                    <div id="user-info">
+                        <div id="form-field">
+                            <input required type="text" class="form-control" name="name" placeholder="Name">
+                        </div>
+                        <div id="form-field">
+                            <input required type="email" class="form-control" name="email" placeholder="Email">
+                        </div>  
+                    </div>
+
+                    <div id="shipping-info">
+                        <hr>
+                        <p>Shipping Information:</p>
+                        <hr>
+                        <div class="form-field">
+                            <input type="text" class="class-control" name="adress", placeholder="Adress">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="class-control" name="city", placeholder="City">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="class-control" name="state", placeholder="State">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="class-control" name="zipcode", placeholder="Zip code">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <input type="sumbit" value="Continue" id="form-button" class="btn btn-success btn-block">
+                </form>
+            </div>
+            <br>
+            <div class="box-element hidden" id="payment-info">
+                <small>Paypal Options</small>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box-element">
+                <a href="{% url 'cart' %}" class="btn btn-outline-dark">
+                    &#x2190; Back to Cart
+                </a>
+                <hr>
+                <h3>Order Summary</h3>
+                <hr>
+                <div class="cart-row">
+                    <div style="flex: 2;"><img class="row-image" src="{% static 'images/placeholder.png' %}" alt="placeholder image"></div>
+                    <div style="flex: 2;">Product 1</div>
+                    <div style="flex: 1;">5€</div>
+                    <div style="flex: 1;"><p>x2</p></div>
+                </div>
+
+                <h5>Items: 2</h5>
+                <h5>Total: 10€</h5>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
