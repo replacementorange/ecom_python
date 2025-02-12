@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import Customer, Product, Order, OrderItem, ShippingAddress
 
 
 # Store page view
 def store(request):
-    context = {}
+    products = Product.objects.all()
+    context = {'products': products}
     return render(request, "store/store.html", context)
 
 
